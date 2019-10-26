@@ -1,0 +1,3 @@
+ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+Validator validator = factory.getValidator();
+Set<ConstraintViolation<Game>> violations = validator.validate(game);

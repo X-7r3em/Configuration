@@ -1,0 +1,20 @@
+public class ValidatorUtility {
+    private final Validator validator;
+
+    public ValidatorUtility() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        this.validator = factory.getValidator();
+    }
+
+    public <E> boolean isValid(E element) {
+        return this.validator.validate(element).size() == 0;
+    }
+
+    public <E> String validationErrors(E element) {
+        StringBuilder output = new StringBuilder();
+        this.validator.validate(element)
+                .forEach(v -> output.append(v.getMessage()).append(System.lineSeparator()));
+
+        return output.toString().trim();
+    }
+}

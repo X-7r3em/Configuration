@@ -1,0 +1,31 @@
+@Configuration
+public class AppConfiguration {
+
+    @Bean
+    public Gson initializeGSON() {
+        return new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                .setPrettyPrinting()
+                .create();
+    }
+
+    @Bean
+    public ModelMapper initializeModelMapper() {
+        return new ModelMapper();
+    }
+
+    @Bean
+    public ValidatorUtility initializeValidatorUtility() {
+        return new ValidatorUtility();
+    }
+
+    @Bean
+    public Random initializeRandom() {
+        return new Random();
+    }
+
+    @Bean
+    public BufferedReader initializeBufferedReader() {
+        return new BufferedReader(new InputStreamReader(System.in));
+    }
+}

@@ -1,0 +1,25 @@
+//Object to String
+
+JAXBContext context = JAXBContext.newInstance(Person.class);
+Marshaller marshaller = context.createMarshaller();
+marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+StringWriter stringWriter = new StringWriter();
+marshaller.marshal(p1, stringWriter);
+ 
+System.out.println(stringWriter);
+
+---------------------------------------------
+//File to Object
+
+JAXBContext jaxbContext = JAXBContext.newInstance(UserWrapperDto.class);
+Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+UserWrapperDto userWrapperDto = (UserWrapperDto) unmarshaller.unmarshal(new File(path));
+
+---------------------------------------------
+//String to Object
+
+JAXBContext jaxbContext = JAXBContext.newInstance(People.class);
+Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+StringReader stringReader = new StringReader(input);
+People people = (People) unmarshaller.unmarshal(stringReader);		
