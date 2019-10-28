@@ -1,0 +1,6 @@
+		<!-- Hashing -->
+		<dependency>
+			<artifactId>commons-codec</artifactId>
+			<groupId>commons-codec</groupId>
+			<version>1.12</version>
+		</dependency>
