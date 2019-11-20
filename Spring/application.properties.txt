@@ -6,8 +6,8 @@ spring.datasource.password = 1234
 
 #JPA Properties
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MariaDBDialect
-spring.jpa.properties.hibernate.format_sql = TRUE(FALSE)
-spring.jpa.properties.hibernate.show_sql = TRUE(FALSE)
+spring.jpa.properties.hibernate.format_sql = TRUE
+spring.jpa.properties.hibernate.show_sql = TRUE
 spring.jpa.hibernate.ddl-auto = update
 
 # control the sql db initialization (from schema.sql and data.sql)
@@ -15,9 +15,9 @@ spring.datasource.initialization-mode = ALWAYS
 
 ###Logging Levels
 # Disable the default loggers
-logging.level.org = WARN(FATAL)
-logging.level.blog = WARN(FATAL)
+logging.level.org = WARN
+logging.level.blog = WARN
 
 #Show SQL executed with parameter bindings
-logging.level.org.hibernate.SQL = DEBUG(FATAL)
-logging.level.org.hibernate.type.descriptor = TRACE(FATAL)
+logging.level.org.hibernate.SQL = DEBUG
+logging.level.org.hibernate.type.descriptor = TRACE
