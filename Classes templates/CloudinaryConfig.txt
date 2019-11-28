@@ -1,0 +1,36 @@
+@Configuration
+public class CloudinaryConfig {
+
+    @Value("${cloudinary.cloud-name}")
+    private String cloudName;
+
+    @Value("${cloudinary.api-key}")
+    private String apiKey;
+
+    @Value("${cloudinary.api-secret}")
+    private String apiSecret;
+
+    @Bean
+    public Cloudinary cloudinary() {
+        Map<String, String> config = new HashMap<>();
+        config.put("cloud_name", cloudName);
+        config.put("api_key", apiKey);
+        config.put("api_secret", apiSecret);
+        return new Cloudinary(config);
+    }
+}
+
+@PostMapping("/create")
+public ModelAndView create(@ModelAttribute CreateModel createModel) throws IOException {
+	MultipartFile multipartFile = createModel.getImage();
+	File file = File.createTempFile("temp-file", multipartFile.getOriginalFilename());
+	multipartFile.transferTo(file);
+	Map<String, String> options = new HashMap<>();
+	options.put("resource_type", "auto");
+	//Check if file is empty for Runtime Exception
+	if (file.length() == 0) {
+		return new ModelAndView("redirect:/home");
+	}
+	String url = cloudinary.uploader().upload(file, options).get("url").toString();
+	return new ModelAndView("redirect:/create");
+}

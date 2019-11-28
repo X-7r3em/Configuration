@@ -21,3 +21,8 @@ logging.level.blog = WARN
 #Show SQL executed with parameter bindings
 logging.level.org.hibernate.SQL = DEBUG
 logging.level.org.hibernate.type.descriptor = TRACE
+
+#CloudinarySettings
+cloudinary.cloud-name=xtreem1993
+cloudinary.api-key=533663973866786
+cloudinary.api-secret=P21Qx4WVCVQvbKSTqI6jD3EahV0
