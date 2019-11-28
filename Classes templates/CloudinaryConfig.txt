@@ -27,7 +27,8 @@ public ModelAndView create(@ModelAttribute CreateModel createModel) throws IOExc
 	multipartFile.transferTo(file);
 	Map<String, String> options = new HashMap<>();
 	options.put("resource_type", "auto");
-	//Check if file is empty for Runtime Exception
+	//Check if file is empty for Runtime Exception.
+	//ToDo -> Check for the max file size
 	if (file.length() == 0) {
 		return new ModelAndView("redirect:/home");
 	}
