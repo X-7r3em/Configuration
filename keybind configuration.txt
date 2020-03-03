@@ -1,0 +1,5 @@
+Copy row -> Ctrl + D
+Delete row -> Ctrl + Shift + Z
+Switch row up/down -> Ctrl + Shift + Up/Down
+Autoforamt code -> Ctrl + Alt + L
+Search in files -> Ctrl + N
