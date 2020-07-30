@@ -1,5 +1,6 @@
-Copy row -> Ctrl + D
-Delete row -> Ctrl + Shift + Z
-Switch row up/down -> Ctrl + Shift + Up/Down
-Autoforamt code -> Ctrl + Alt + L
-Search in files -> Ctrl + N
+Copy row: Ctrl + D
+Delete row: Ctrl + Shift + Z
+Autoforamt code: Ctrl + Alt + L
+Mark next occurance: Alt + J
+Move line down/up: Ctrl + Shift + UpArrow/DownArrow
+Add cursor above/below: Ctrl + Ctrl (hold) UpArrow/DownArrow; Ctrl + Alt + UpArrow/DownArrow
